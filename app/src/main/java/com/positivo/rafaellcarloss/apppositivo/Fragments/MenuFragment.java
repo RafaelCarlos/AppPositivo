@@ -19,13 +19,16 @@ import java.util.List;
  */
 public class MenuFragment extends Fragment {
     private ListView mListView;
-    private List<Menu> mList;
+
+    public MenuFragment() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
-    public View onCreView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         mListView = (ListView) view.findViewById(R.id.lv_menu);
