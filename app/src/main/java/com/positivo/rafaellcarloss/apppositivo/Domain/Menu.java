@@ -8,8 +8,8 @@ import android.os.Parcelable;
  */
 public class Menu implements Parcelable {
 
-    private String nome;
     private int foto;
+    private String nome;
 
     public Menu() {
     }
@@ -19,19 +19,11 @@ public class Menu implements Parcelable {
         setNome(parcel.readString());
     }
 
-    public Menu(String nome, int foto) {
-        this.nome = nome;
+    public Menu(int foto,String nome ) {
         this.foto = foto;
-    }
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
     }
+
 
     public int getFoto() {
         return foto;
@@ -39,6 +31,14 @@ public class Menu implements Parcelable {
 
     public void setFoto(int foto) {
         this.foto = foto;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     @Override
