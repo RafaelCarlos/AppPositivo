@@ -26,6 +26,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.Teste;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,15 +59,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
 
-        MenuFragment frag = (MenuFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+//        MenuFragment frag = (MenuFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
+//
+//
+//        if (frag != null) {
+//            frag = new MenuFragment();
+//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
+//            ft.commit();
+//        }
+
+        Fragment frag = frag = new MenuFragment();
 
 
-        if (frag != null) {
-            frag = new MenuFragment();
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
-            ft.commit();
-        }
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.rl_fragment_container, frag);
+        ft.addToBackStack("");
+        ft.commit();
+
 
         headerNavigationLeft = new AccountHeader()
                 .withActivity(this)
@@ -108,32 +118,36 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
 
-                        if (i == 0) {
-                            mToolbar.setTitle(((PrimaryDrawerItem) iDrawerItem).getName());
-                        }
-                        else if (i == 1)
-                        {
-                            mToolbar.setTitle(((PrimaryDrawerItem) iDrawerItem).getName());
-                        }
-
-                        else if(i==2 )
-                        {
-                            mToolbar.setTitle(((PrimaryDrawerItem) iDrawerItem).getName());
-                        }
-
 //                        Fragment frag = null;
-//                        Fragment novo = new MenuFragment();
+
+
+                        if (i == 0) {
+//                            frag = new MenuFragment();
+                            mToolbar.setTitle("Home");
+                        } else if (i == 1) {
+                            mToolbar.setTitle("Recarga Grátis");
+                        } else if (i == 2) {
+                            mToolbar.setTitle("Minha Carteira");
+                        } else {
+                            mToolbar.setTitle("Shopping");
+
+                        }
+
+//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                        ft.replace(R.id.frame, frag);
+//                        ft.addToBackStack(null);
+//                        ft.commit();
+//                        Fragment frag = null;
 //                        mItemDrawerSelected = i;
 //
 //                        if (i == 0) {
 //                            frag = new MenuFragment();
-//                        }
-//                        else if (i == 1) {
+//                        } else if (i == 1) {
 //                            frag = new MenuFragment();
 //                        }
 //
 //                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
+//                        ft.replace(R.id.rl_fragment_container, frag);
 //                        ft.addToBackStack(null);
 //                        ft.commit();
 
@@ -196,6 +210,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState = navigationDrawerLeft.saveInstanceState(outState);
+        outState = headerNavigationLeft.saveInstanceState(outState);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
