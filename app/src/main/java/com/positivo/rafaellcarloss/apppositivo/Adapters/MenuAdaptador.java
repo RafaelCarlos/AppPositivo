@@ -39,6 +39,22 @@ public class MenuAdaptador extends ArrayAdapter<Menu> {
 
     }
 
+
+    @Override
+    public int getCount() {
+        return lista.size();
+    }
+
+    @Override
+    public Menu getItem(int position) {
+        return lista.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
     public View getView(int indice, View celulaRecliclada, ViewGroup pai) {
 
         if (celulaRecliclada == null) {
