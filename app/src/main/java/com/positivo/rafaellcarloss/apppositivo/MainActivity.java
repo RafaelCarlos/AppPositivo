@@ -25,6 +25,7 @@ import com.mikepenz.materialdrawer.model.ToggleDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.CarteiraFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.Teste;
 
@@ -58,16 +59,6 @@ public class MainActivity extends AppCompatActivity {
         mToolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(mToolbar);
 
-
-//        MenuFragment frag = (MenuFragment) getSupportFragmentManager().findFragmentByTag("mainFrag");
-//
-//
-//        if (frag != null) {
-//            frag = new MenuFragment();
-//            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//            ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
-//            ft.commit();
-//        }
 
         Fragment frag = frag = new MenuFragment();
 
@@ -118,13 +109,14 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l, IDrawerItem iDrawerItem) {
 
-//                        Fragment frag = null;
+                        Fragment frag = null;
 
 
                         if (i == 0) {
-//                            frag = new MenuFragment();
+                            frag = new MenuFragment();
                             mToolbar.setTitle("Home");
                         } else if (i == 1) {
+                            frag = new CarteiraFragment();
                             mToolbar.setTitle("Recarga Grátis");
                         } else if (i == 2) {
                             mToolbar.setTitle("Minha Carteira");
@@ -133,10 +125,10 @@ public class MainActivity extends AppCompatActivity {
 
                         }
 
-//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        ft.replace(R.id.frame, frag);
-//                        ft.addToBackStack(null);
-//                        ft.commit();
+                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.rl_fragment_container, frag);
+                        ft.addToBackStack(null);
+                        ft.commit();
 //                        Fragment frag = null;
 //                        mItemDrawerSelected = i;
 //
