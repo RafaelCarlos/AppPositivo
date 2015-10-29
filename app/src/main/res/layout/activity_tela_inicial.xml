@@ -24,7 +24,6 @@
                 android:id="@+id/tb_tela_inicial"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-
                 android:layout_alignParentLeft="true"
                 android:background="?attr/colorPrimary"
                 android:elevation="4dp"

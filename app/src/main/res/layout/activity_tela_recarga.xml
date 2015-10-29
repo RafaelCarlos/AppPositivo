@@ -15,5 +15,14 @@
         android:minHeight="?attr/actionBarSize"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+    <Button
+        android:id="@+id/bt_add_novo_numero_tela_recarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tb_main_recarga"
+        android:text="Adicionar Novo Número" />
+
 
 </RelativeLayout>
