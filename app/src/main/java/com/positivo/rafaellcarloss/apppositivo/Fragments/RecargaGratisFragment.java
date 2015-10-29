@@ -48,7 +48,7 @@ public class RecargaGratisFragment extends Fragment implements AdapterView.OnIte
 
         mListView.setAdapter(vrRecargaGratisAdapter);
 
-
+        mListView.setDivider(null);
         mListView.setOnItemClickListener(this);
         return view;
     }

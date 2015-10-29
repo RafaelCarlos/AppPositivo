@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:textAlignment="center">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/ivMenuIcon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
-
-    <TextView
-        android:id="@+id/tvMenuItem"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/ivMenuIcon"
-        android:layout_toRightOf="@+id/ivMenuIcon"
-        android:paddingBottom="5dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="5dp"
-        android:text="Menu"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000"
-        android:textIsSelectable="false" />
-</RelativeLayout>
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+        <ImageView
+            android:id="@+id/ivMenuIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tvMenuItem"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/ivMenuIcon"
+            android:layout_toRightOf="@+id/ivMenuIcon"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="5dp"
+            android:text="Menu"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000"
+            android:textIsSelectable="false" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="60dp"
+        android:background="@color/colorPrimary"></View>
+</LinearLayout>
