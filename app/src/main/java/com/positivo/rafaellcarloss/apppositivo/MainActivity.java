@@ -27,6 +27,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.CarteiraFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.RecargaGratisFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.Teste;
 
 public class MainActivity extends AppCompatActivity {
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                             frag = new MenuFragment();
                             mToolbar.setTitle("Home");
                         } else if (i == 1) {
-
+                            frag = new RecargaGratisFragment();
                             mToolbar.setTitle("Recarga Grátis");
                         } else if (i == 2) {
                             frag = new CarteiraFragment();
