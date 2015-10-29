@@ -1,93 +1,103 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context="com.positivo.rafaellcarloss.apppositivo.TelaInicial">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_tela_inicial"
+
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentLeft="true"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_tela_inicial"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+
+                android:layout_alignParentLeft="true"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" > </android.support.v7.widget.Toolbar>
 
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="54dp"
-        android:paddingTop="4dp"
-        android:layout_below="@+id/tb_tela_inicial"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_lampada_cifrao" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="54dp"
+                android:paddingTop="4dp"
+                android:src="@drawable/ic_lampada_cifrao" />
 
-    <TextView
-        android:id="@+id/tvBemVindo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true"
-        android:text="Bem-Vindo ao Positivo Recarga"
-        android:textColor="#010101"
-        android:textSize="20dp" />
+            <TextView
+                android:id="@+id/tvBemVindo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:text="Bem-Vindo ao Positivo Recarga"
+                android:textColor="#010101"
+                android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/btLogarFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/screen_border"
-        android:backgroundTint="#4969ff"
-        android:paddingBottom="5dp"
-        android:text="     Entrar com Facebook"
-        android:drawableLeft="@drawable/ic_facebook"
-        android:drawablePadding="-60dp"
-        android:textColor="#fcfcff"
-        android:layout_below="@+id/tvBemVindo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            <Button
+                android:id="@+id/btLogarFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tvBemVindo"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/screen_border"
+                android:backgroundTint="#4969ff"
+                android:drawableLeft="@drawable/ic_facebook"
+                android:drawablePadding="-60dp"
+                android:paddingBottom="5dp"
+                android:text="     Entrar com Facebook"
+                android:textColor="#fcfcff" />
 
-    <!--android:onClick="loginFace"   -->
+            <!--android:onClick="loginFace"   -->
 
 
-    <Button
-        android:id="@+id/btLogarComEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/screen_border_botao"
-        android:text="Entrar com E-mail"
-        android:textColor="#fefffa"
-        android:layout_below="@+id/btLogarFacebook"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="44dp" />
+            <Button
+                android:id="@+id/btLogarComEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/btLogarFacebook"
+                android:layout_marginTop="44dp"
+                android:background="@drawable/screen_border_botao"
+                android:text="Entrar com E-mail"
+                android:textColor="#fefffa" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btLogarComEmail"
-        android:layout_marginTop="40dp"
-        android:text="Não postaremos nada no seu perfil."
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:textSize="15dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/btLogarComEmail"
+                android:layout_marginTop="40dp"
+                android:text="Não postaremos nada no seu perfil."
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold" />
 
-</RelativeLayout>
+        </RelativeLayout>
 
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class TelaInicial extends ActionBarActivity implements View.OnClickListener {
+public class TelaInicial extends AppCompatActivity implements View.OnClickListener {
 
     Button btLogarFacebook;
     Toolbar mToolbar;
@@ -34,10 +34,7 @@ public class TelaInicial extends ActionBarActivity implements View.OnClickListen
         getSupportActionBar().setHomeButtonEnabled(false);*/
 
 
-
         btLogarFacebook.setOnClickListener(this);
-
-
 
 
     }
@@ -66,7 +63,7 @@ public class TelaInicial extends ActionBarActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        startActivity( new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
 
     }
 }

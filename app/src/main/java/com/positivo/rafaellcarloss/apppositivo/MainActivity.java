@@ -116,9 +116,10 @@ public class MainActivity extends AppCompatActivity {
                             frag = new MenuFragment();
                             mToolbar.setTitle("Home");
                         } else if (i == 1) {
-                            frag = new CarteiraFragment();
+
                             mToolbar.setTitle("Recarga Grátis");
                         } else if (i == 2) {
+                            frag = new CarteiraFragment();
                             mToolbar.setTitle("Minha Carteira");
                         } else {
                             mToolbar.setTitle("Shopping");

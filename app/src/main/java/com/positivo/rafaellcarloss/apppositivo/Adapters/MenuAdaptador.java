@@ -32,27 +32,11 @@ public class MenuAdaptador extends ArrayAdapter<Menu> {
         this.context = context;
         this.lista = lista;
 
-//        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        scale = context.getResources().getDisplayMetrics().density;
-//        width = context.getResources().getDisplayMetrics().widthPixels - (int) (14 * scale + 0.5f);
-//        height = (width / 16) * 9;
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        scale = context.getResources().getDisplayMetrics().density;
+        width = context.getResources().getDisplayMetrics().widthPixels - (int) (14 * scale + 0.5f);
+        height = (width / 16) * 9;
 
-    }
-
-
-    @Override
-    public int getCount() {
-        return lista.size();
-    }
-
-    @Override
-    public Menu getItem(int position) {
-        return lista.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
     }
 
     public View getView(int indice, View celulaRecliclada, ViewGroup pai) {
@@ -72,4 +56,18 @@ public class MenuAdaptador extends ArrayAdapter<Menu> {
         return celulaRecliclada;
     }
 
+    @Override
+    public int getCount() {
+        return lista.size();
+    }
+
+    @Override
+    public Menu getItem(int position) {
+        return lista.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 }

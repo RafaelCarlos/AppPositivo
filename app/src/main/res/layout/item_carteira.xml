@@ -22,7 +22,8 @@
         android:id="@+id/tv_titulo_item_fragment_carteira"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iv_carteira_item_fragment"
-        android:layout_toEndOf="@+id/iv_carteira_item_fragment" />
+        android:layout_toEndOf="@+id/iv_carteira_item_fragment"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
