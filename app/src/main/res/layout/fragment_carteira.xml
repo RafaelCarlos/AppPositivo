@@ -23,12 +23,12 @@
         android:textSize="50dp"
         android:textStyle="italic" />
 
-
     <ListView
         android:id="@+id/lv_itens_carteira"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:choiceMode="singleChoice"
+        android:divider="@null"
         android:padding="10dp"
         android:scrollbars="vertical" />
 
