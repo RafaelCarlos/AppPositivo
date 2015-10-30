@@ -5,10 +5,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class TelaRecarga extends ActionBarActivity {
 
     private Toolbar mToolbar;
+    private Button btAddNumero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,8 @@ public class TelaRecarga extends ActionBarActivity {
         setContentView(R.layout.activity_tela_recarga);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_recarga);
+        btAddNumero = (Button) findViewById(R.id.bt_add_novo_numero_tela_recarga);
+
         mToolbar.setTitle("Recarga");
 
 
