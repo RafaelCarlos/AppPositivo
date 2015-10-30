@@ -61,13 +61,19 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
 
-        Fragment frag = frag = new MenuFragment();
+        Fragment frag = frag = getSupportFragmentManager().findFragmentByTag("mainFrag");
 
+        if (frag == null) {
+            frag = new MenuFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
+            ft.commit();
+        }
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.rl_fragment_container, frag);
-        ft.addToBackStack("");
-        ft.commit();
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.replace(R.id.rl_fragment_container, frag);
+//        ft.addToBackStack("");
+//        ft.commit();
 
 
         headerNavigationLeft = new AccountHeader()
@@ -127,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
 
                         }
 
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.rl_fragment_container, frag);
-                        ft.addToBackStack(null);
-                        ft.commit();
-//                        Fragment frag = null;
+//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                        ft.replace(R.id.rl_fragment_container, frag);
+//                        ft.addToBackStack(null);
+//                        ft.commit();
+////                        Fragment frag = null;
 //                        mItemDrawerSelected = i;
 //
 //                        if (i == 0) {
@@ -140,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
 //                            frag = new MenuFragment();
 //                        }
 //
-//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        ft.replace(R.id.rl_fragment_container, frag);
-//                        ft.addToBackStack(null);
-//                        ft.commit();
+                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                        ft.replace(R.id.rl_fragment_container, frag);
+                        ft.addToBackStack(null);
+                        ft.commit();
 
 
                         for (int count = 0, tam = navigationDrawerLeft.getDrawerItems().size(); count < tam; count++) {

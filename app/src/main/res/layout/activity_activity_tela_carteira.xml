@@ -37,7 +37,7 @@
         android:textStyle="italic" />
 
     <ListView
-        android:id="@+id/lv_itens_carteira"
+        android:id="@+id/lv_activity_tela_carteira"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:choiceMode="singleChoice"
