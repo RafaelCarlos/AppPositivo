@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private OnCheckedChangeListener mOnCheckedChangeListener = new OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(IDrawerItem iDrawerItem, CompoundButton compoundButton, boolean b) {
-            Toast.makeText(MainActivity.this, "onCheckedChanged: " + (b ? "true" : "false"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Notificação: " + (b ? "Ativada." : "Desativada."), Toast.LENGTH_SHORT).show();
         }
     };
 
