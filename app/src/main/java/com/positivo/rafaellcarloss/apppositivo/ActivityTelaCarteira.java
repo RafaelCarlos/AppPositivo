@@ -76,8 +76,8 @@ public class ActivityTelaCarteira extends AppCompatActivity implements AdapterVi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        if (position == 0) {
-            startActivity(new Intent(this, TelaRecarga.class));
+        if (position == 1) {
+            Toast.makeText(this, "Posicao" + position, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Posicao" + position, Toast.LENGTH_SHORT).show();
         }
