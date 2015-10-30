@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -38,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private int mPositionClicked;
     private int mItemDrawerSelected;
-
-
     private OnCheckedChangeListener mOnCheckedChangeListener = new OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(IDrawerItem iDrawerItem, CompoundButton compoundButton, boolean b) {
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
+
         mToolbar.setTitle("Positivo Recarga");
         mToolbar.setSubtitle("Faça sua recarga diária");
         mToolbar.setLogo(R.mipmap.ic_launcher);

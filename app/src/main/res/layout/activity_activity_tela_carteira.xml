@@ -1,11 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.positivo.rafaellcarloss.apppositivo.ActivityTelaCarteira">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_activity_tela_carteira"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
 
     <TextView
-        android:id="@+id/tv_saldo_carteira_fragment"
+        android:id="@+id/tv_activity_tela_carteira"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_carteira_fragment_carteira"
@@ -14,7 +27,7 @@
         android:textColor="@color/abc_primary_text_material_dark" />
 
     <TextView
-        android:id="@+id/tv_carteira_fragment_carteira"
+        android:id="@+id/tv_saldo_carteira_activity_tela_carteira"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/colorPrimary"

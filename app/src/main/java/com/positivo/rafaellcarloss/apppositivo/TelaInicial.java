@@ -76,6 +76,8 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         titulo.setText("Aguarde");
         titulo.setTextColor(Color.RED);
 
+        titulo.setBackgroundColor(Color.GREEN);
+
         TextView mensagem = new TextView(this);
         mensagem.setText("Logando..");
         mensagem.setTextColor(Color.RED);
