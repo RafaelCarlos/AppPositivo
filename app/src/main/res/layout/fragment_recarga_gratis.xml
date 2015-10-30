@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCDCDC"
@@ -9,9 +8,9 @@
     <TextView
         android:id="@+id/tv_informaca_fragment_recarga_gratis"
         android:layout_width="match_parent"
-        android:background="#DCDCDC"
         android:layout_height="40dp"
         android:layout_below="@+id/rl_elementos"
+        android:background="#DCDCDC"
         android:text="Convide pessoas e ganhe R$ 3 por cada um indicado que usar."
         android:textColor="@color/secondary_text" />
 
@@ -36,15 +35,15 @@
             android:id="@+id/bt_copiar_fragment_recarga_gratis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="87dp"
+            android:layout_marginRight="87dp"
             android:background="@color/colorFAB"
             android:paddingLeft="10dp"
             android:text="Copiar"
-            android:textColor="@color/abc_primary_text_material_dark"
-            android:layout_marginRight="87dp"
-            android:layout_marginEnd="87dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColor="@color/abc_primary_text_material_dark" />
 
     </RelativeLayout>
 
@@ -57,7 +56,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:choiceMode="singleChoice"
-            android:padding="10dp"
             android:scrollbars="vertical" />
     </RelativeLayout>
 </LinearLayout>

@@ -6,7 +6,7 @@
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
@@ -16,7 +16,10 @@
             android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp" />
 
         <TextView
             android:id="@+id/tv_titulo_item_fragment_carteira"
@@ -25,7 +28,9 @@
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/iv_carteira_item_fragment"
             android:layout_toRightOf="@+id/iv_carteira_item_fragment"
+            android:paddingBottom="2dp"
             android:paddingLeft="10dp"
+            android:paddingTop="5dp"
             android:text="Titulo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#000000"
@@ -38,6 +43,7 @@
             android:layout_below="@+id/tv_titulo_item_fragment_carteira"
             android:layout_toEndOf="@+id/iv_carteira_item_fragment"
             android:layout_toRightOf="@+id/iv_carteira_item_fragment"
+            android:paddingBottom="3dp"
             android:paddingLeft="10dp"
             android:text="Descricao"
             android:textColor="#000000" />

@@ -1,19 +1,28 @@
 package com.positivo.rafaellcarloss.apppositivo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class TelaInicial extends AppCompatActivity implements View.OnClickListener {
 
     Button btLogarFacebook;
     Toolbar mToolbar;
+    private Handler h = new Handler();
+
+    private ProgressDialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +72,65 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        TextView titulo = new TextView(this);
+        titulo.setText("Aguarde");
+        titulo.setTextColor(Color.RED);
+
+        TextView mensagem = new TextView(this);
+        mensagem.setText("Logando..");
+        mensagem.setTextColor(Color.RED);
+
+
+        dialog = ProgressDialog.show(this, titulo.getText(), mensagem.getText(), false, true);
+//        pause(3000);
+        exibi();
         startActivity(new Intent(this, MainActivity.class));
 
     }
+
+    private void exibi() {
+        new Thread() {
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(3000);
+                } catch (Exception e) {
+                    Log.i("Erro Thread", e.toString());
+                }
+                finaliza();
+            }
+        }.start();
+    }
+
+    private void finaliza() {
+        h.post(new Runnable() {
+
+
+            @Override
+
+            public void run() {
+
+                // TODO Auto-generated method stub
+
+                dialog.dismiss();
+
+            }
+
+        });
+
+    }
+
+
+//
+//    private void pause(int time) {
+//        try {
+//            Thread.sleep(time);
+//
+//        } catch (Exception e) {
+//            Log.i("Erro Thread", e.toString());
+//        }
+//    }
+
 }
