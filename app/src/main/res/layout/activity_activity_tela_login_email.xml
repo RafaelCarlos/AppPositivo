@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.positivo.rafaellcarloss.apppositivo.ActivityTelaLoginEmail">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_activity_tela_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="74dp"
+                android:paddingTop="4dp"
+                android:src="@drawable/ic_lampada_cifrao" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageView"
+                android:layout_centerHorizontal="true"
+                android:text="Positivo Recarga"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_nome_tela_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="52dp"
+                android:hint="Nome"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/et_email_tela_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_nome_tela_login_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/et_senha_tela_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_email_tela_login_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:hint="****"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/bt_logar_tela_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/et_senha_tela_login_email"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="65dp"
+                android:padding="10dp"
+                android:text="Entrar"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tv_cadastrar_tela_login_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textView2"
+                android:layout_marginRight="5dp"
+                android:text="Cadastre-se"
+                android:textColor="#000000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/tv_esqueci_minha_senha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/et_senha_tela_login_email"
+                android:layout_marginTop="10dp"
+                android:text="Esqueci minha senha"
+                android:textColor="#000000"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

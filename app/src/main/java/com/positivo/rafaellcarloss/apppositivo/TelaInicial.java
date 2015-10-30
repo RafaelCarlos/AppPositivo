@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class TelaInicial extends AppCompatActivity implements View.OnClickListener {
 
-    Button btLogarFacebook;
+    Button btLogarFacebook, btLogarEmail;
     Toolbar mToolbar;
     private Handler h = new Handler();
 
@@ -31,6 +31,7 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
 
 
         btLogarFacebook = (Button) findViewById(R.id.btLogarFacebook);
+        btLogarEmail = (Button) findViewById(R.id.btLogarComEmail);
         mToolbar = (Toolbar) findViewById(R.id.tb_tela_inicial);
         mToolbar.setTitle("Positivo Recarga");
         mToolbar.setSubtitle("Faça sua recarga hoje");
@@ -42,6 +43,13 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);*/
 
+
+        btLogarEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TelaInicial.this, ActivityTelaLoginEmail.class));
+            }
+        });
 
         btLogarFacebook.setOnClickListener(this);
 

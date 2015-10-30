@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.positivo.rafaellcarloss.apppositivo.ActivityTelaCarteira;
+import com.positivo.rafaellcarloss.apppositivo.ActivityTelaRecagaGratis;
 import com.positivo.rafaellcarloss.apppositivo.Adapters.MenuAdaptador;
 import com.positivo.rafaellcarloss.apppositivo.Domain.Menu;
 import com.positivo.rafaellcarloss.apppositivo.Interfaces.ListViewOnClickListenerHack;
@@ -73,6 +74,8 @@ public class MenuFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (position == 0) {
             startActivity(new Intent(getActivity(), TelaRecarga.class));
+        } else if (position == 1) {
+            startActivity(new Intent(getActivity(), ActivityTelaRecagaGratis.class));
         } else {
             Toast.makeText(getActivity(), "Posicao" + position, Toast.LENGTH_SHORT).show();
         }
