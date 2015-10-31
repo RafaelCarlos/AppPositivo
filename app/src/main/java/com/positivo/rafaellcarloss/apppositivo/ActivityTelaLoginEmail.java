@@ -1,14 +1,20 @@
 package com.positivo.rafaellcarloss.apppositivo;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ActivityTelaLoginEmail extends AppCompatActivity {
 
     private Toolbar mToolbar;
+    private TextView tvCadastrar, tvEsqueciSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,31 +23,23 @@ public class ActivityTelaLoginEmail extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_activity_tela_login_email);
 
+        tvCadastrar = (TextView) findViewById(R.id.tv_cadastrar_tela_login_email);
+        tvEsqueciSenha = (TextView) findViewById(R.id.tv_esqueci_minha_senha);
+
         mToolbar.setTitle("Login");
         mToolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(mToolbar);
 
-    }
+        SpannableString spanString = new SpannableString(tvCadastrar.getText().toString());
+        spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
+        spanString.setSpan(new StyleSpan(Typeface.ITALIC), 0, spanString.length(), 0);
+        tvCadastrar.setText(spanString);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_tela_login_email, menu);
-        return true;
-    }
+        SpannableString spanString2 = new SpannableString(tvEsqueciSenha.getText().toString());
+        spanString2.setSpan(new UnderlineSpan(), 0, spanString2.length(), 0);
+        spanString2.setSpan(new StyleSpan(Typeface.ITALIC), 0, spanString2.length(), 0);
+        tvEsqueciSenha.setText(spanString2);
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
+
+    }
 }
