@@ -4,4 +4,120 @@
     android:layout_height="match_parent">
 
 
+    <TextView
+        android:id="@+id/et_notificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Notificações"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sim"
+        android:id="@+id/tb_notificacao"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:checked="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Receber notificações diárias"
+        android:id="@+id/tv_notificacoes_diarias"
+        android:layout_below="@+id/et_notificacao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="E-mails Promocionais"
+        android:id="@+id/tv_email_promocional"
+        android:layout_below="@+id/tb_notificacao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sim"
+        android:id="@+id/tb_email_promocional"
+        android:layout_below="@+id/tb_notificacao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:checked="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Receber e-mails promocionais"
+        android:id="@+id/tv_emails"
+        android:layout_below="@+id/tv_email_promocional"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Baixo Saldo"
+        android:id="@+id/tv_baixo_saldo"
+        android:layout_below="@+id/tb_email_promocional"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sim"
+        android:id="@+id/tb_baixo_saldo_tela_configuracao"
+        android:layout_below="@+id/tb_email_promocional"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:checked="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Receber avisos de baixo saldo"
+        android:id="@+id/tv_descricao_baixo_saldo"
+        android:layout_below="@+id/tv_baixo_saldo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:id="@+id/bt_salvar_tela_configuracao"
+        android:layout_below="@+id/tb_baixo_saldo_tela_configuracao"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="54dp" />
+
+    <android.support.v7.widget.SwitchCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/view"
+        android:layout_below="@+id/bt_salvar_tela_configuracao"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:checked="true" />
+
+
 </RelativeLayout>

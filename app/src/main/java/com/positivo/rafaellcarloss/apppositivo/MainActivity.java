@@ -27,6 +27,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.CarteiraFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.ConfiguracaoFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.RecargaGratisFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.Teste;
@@ -128,8 +129,30 @@ public class MainActivity extends AppCompatActivity {
                         } else if (i == 2) {
                             frag = new CarteiraFragment();
                             mToolbar.setTitle("Minha Carteira");
-                        } else {
+                        } else if (i == 3) {
                             mToolbar.setTitle("Shopping");
+
+                        } else if (i == 4) {
+                            mToolbar.setTitle("Shopping");
+
+                        } else if (i == 5) {
+                            mToolbar.setTitle("Shopping");
+
+                        } else if (i == 6) {
+                            mToolbar.setTitle("Shopping");
+
+                        } else if (i == 7) {
+                            frag = new ConfiguracaoFragment();
+                            mToolbar.setTitle("Configurações");
+
+                        }
+                        else if (i == 8) {
+                            frag = new ConfiguracaoFragment();
+                            mToolbar.setTitle("Configurações");
+
+                        }
+
+                        else {
 
                         }
 

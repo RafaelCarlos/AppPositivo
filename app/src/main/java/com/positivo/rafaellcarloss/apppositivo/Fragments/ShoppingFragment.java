@@ -11,12 +11,10 @@ import com.positivo.rafaellcarloss.apppositivo.R;
 /**
  * Created by rafaellcarloss on 03/11/15.
  */
-public class ConfiguracaoFragment extends Fragment {
+public class ShoppingFragment extends Fragment {
 
-    public ConfiguracaoFragment() {
-
+    public ShoppingFragment() {
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -25,10 +23,8 @@ public class ConfiguracaoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_configuracao, container, false);
+        View view = inflater.inflate(R.layout.fragment_shopping, container, false);
 
         return view;
-
     }
 }
