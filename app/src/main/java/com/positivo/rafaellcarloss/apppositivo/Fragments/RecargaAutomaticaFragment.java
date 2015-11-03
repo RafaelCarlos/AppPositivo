@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.positivo.rafaellcarloss.apppositivo.R;
+
 /**
  * Created by rafaellcarloss on 03/11/15.
  */
@@ -20,6 +22,9 @@ public class RecargaAutomaticaFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+
+        View view = inflater.inflate(R.layout.fragment_recarga_automatica, container, false);
+
+        return view;
     }
 }
