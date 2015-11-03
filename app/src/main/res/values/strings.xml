@@ -5,4 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_tela_inicial">App Positivo</string>
     <string name="title_activity_tela_recarga">TelaRecarga</string>
+    <string name="title_activity_tela_adiciona_numero">TelaAdicionaNumero</string>
+    <string name="title_activity_activity_tela_carteira">ActivityTelaCarteira</string>
+    <string name="title_activity_activity_tela_recaga_gratis">ActivityTelaRecagaGratis</string>
+    <string name="title_activity_activity_tela_login_email">ActivityTelaLoginEmail</string>
+    <string name="title_activity_activity_tela_cadastro_email">ActivityTelaCadastroEmail</string>
 </resources>

@@ -181,7 +181,18 @@ public class MainActivity extends AppCompatActivity {
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Recarga Grátis").withIcon(getResources().getDrawable(R.mipmap.ic_cifrao)));
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Minha Carteira").withIcon(getResources().getDrawable(R.mipmap.ic_carteira)));
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Shopping").withIcon(getResources().getDrawable(R.mipmap.ic_carrinho)));
-        navigationDrawerLeft.addItem(new SectionDrawerItem().withName("Configurações"));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Recarga Automática").withIcon(getResources().getDrawable(R.mipmap.ic_calendario)));
+
+        navigationDrawerLeft.addItem(new SectionDrawerItem());
+
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meu Histórico"));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meus Cartões"));
+
+        navigationDrawerLeft.addItem(new SectionDrawerItem());
+
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Configurações").withIcon(getResources().getDrawable(R.mipmap.ic_config)));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Ajuda"));
+
         navigationDrawerLeft.addItem(new SwitchDrawerItem().withName("Notificação").withChecked(true).withOnCheckedChangeListener(mOnCheckedChangeListener));
         navigationDrawerLeft.addItem(new ToggleDrawerItem().withName("News").withChecked(true).withOnCheckedChangeListener(mOnCheckedChangeListener));
 
@@ -198,6 +209,8 @@ public class MainActivity extends AppCompatActivity {
                 return (isSelecetd ? R.mipmap.ic_carteira : R.mipmap.ic_carteira);
             case 3:
                 return (isSelecetd ? R.mipmap.ic_carrinho : R.mipmap.ic_carrinho);
+            case 7:
+                return (isSelecetd ? R.mipmap.ic_config : R.mipmap.ic_config);
         }
         return (0);
     }
