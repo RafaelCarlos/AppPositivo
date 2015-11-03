@@ -4,8 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.Menu;
@@ -13,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -26,11 +23,15 @@ import com.mikepenz.materialdrawer.model.ToggleDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.OnCheckedChangeListener;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.AjudaFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.CarteiraFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.CartoesFrament;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.ConfiguracaoFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.HistoricoFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.RecargaAutomaticaFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.RecargaGratisFragment;
-import com.positivo.rafaellcarloss.apppositivo.Fragments.Teste;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.ShoppingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -130,29 +131,30 @@ public class MainActivity extends AppCompatActivity {
                             frag = new CarteiraFragment();
                             mToolbar.setTitle("Minha Carteira");
                         } else if (i == 3) {
+                            frag = new ShoppingFragment();
                             mToolbar.setTitle("Shopping");
 
                         } else if (i == 4) {
-                            mToolbar.setTitle("Shopping");
-
-                        } else if (i == 5) {
-                            mToolbar.setTitle("Shopping");
+                            frag = new RecargaAutomaticaFragment();
+                            mToolbar.setTitle("Recarga Automática");
 
                         } else if (i == 6) {
-                            mToolbar.setTitle("Shopping");
+                            frag = new HistoricoFragment();
+                            mToolbar.setTitle("Histórico");
 
                         } else if (i == 7) {
+                            frag = new CartoesFrament();
+                            mToolbar.setTitle("Cartões");
+
+                        } else if (i == 9) {
                             frag = new ConfiguracaoFragment();
                             mToolbar.setTitle("Configurações");
 
-                        }
-                        else if (i == 8) {
-                            frag = new ConfiguracaoFragment();
-                            mToolbar.setTitle("Configurações");
+                        } else if (i == 10) {
+                            frag = new AjudaFragment();
+                            mToolbar.setTitle("Ajuda");
 
-                        }
-
-                        else {
+                        } else {
 
                         }
 
@@ -175,17 +177,17 @@ public class MainActivity extends AppCompatActivity {
                         ft.commit();
 
 
-                        for (int count = 0, tam = navigationDrawerLeft.getDrawerItems().size(); count < tam; count++) {
-                            if (count == mPositionClicked && mPositionClicked <= 3) {
-                                PrimaryDrawerItem aux = (PrimaryDrawerItem) navigationDrawerLeft.getDrawerItems().get(count);
-                                aux.setIcon(getResources().getDrawable(getCorretcDrawerIcon(count, false)));
-                                break;
-                            }
-                        }
-
-                        if (i <= 3) {
-                            ((PrimaryDrawerItem) iDrawerItem).setIcon(getResources().getDrawable(getCorretcDrawerIcon(i, true)));
-                        }
+//                        for (int count = 0, tam = navigationDrawerLeft.getDrawerItems().size(); count < tam; count++) {
+//                            if (count == mPositionClicked && mPositionClicked <= 3) {
+//                                PrimaryDrawerItem aux = (PrimaryDrawerItem) navigationDrawerLeft.getDrawerItems().get(count);
+//                                aux.setIcon(getResources().getDrawable(getCorretcDrawerIcon(count, false)));
+//                                break;
+//                            }
+//                        }
+//
+//                        if (i <= 3) {
+//                            ((PrimaryDrawerItem) iDrawerItem).setIcon(getResources().getDrawable(getCorretcDrawerIcon(i, true)));
+//                        }
 
                         mPositionClicked = i;
                         navigationDrawerLeft.getAdapter().notifyDataSetChanged();
