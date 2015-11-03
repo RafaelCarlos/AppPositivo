@@ -27,6 +27,7 @@ import com.positivo.rafaellcarloss.apppositivo.Fragments.AjudaFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.CarteiraFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.CartoesFrament;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.ConfiguracaoFragment;
+import com.positivo.rafaellcarloss.apppositivo.Fragments.FeedbackFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.HistoricoFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.MenuFragment;
 import com.positivo.rafaellcarloss.apppositivo.Fragments.RecargaAutomaticaFragment;
@@ -41,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private int mPositionClicked;
     private int mItemDrawerSelected;
-    private OnCheckedChangeListener mOnCheckedChangeListener = new OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(IDrawerItem iDrawerItem, CompoundButton compoundButton, boolean b) {
-            Toast.makeText(MainActivity.this, "Notificação: " + (b ? "Ativada." : "Desativada."), Toast.LENGTH_SHORT).show();
-        }
-    };
+
+
+//    private OnCheckedChangeListener mOnCheckedChangeListener = new OnCheckedChangeListener() {
+//        @Override
+//        public void onCheckedChanged(IDrawerItem iDrawerItem, CompoundButton compoundButton, boolean b) {
+//            Toast.makeText(MainActivity.this, "Notificação: " + (b ? "Ativada." : "Desativada."), Toast.LENGTH_SHORT).show();
+//        }
+//    };
 
 
     @Override
@@ -153,24 +156,14 @@ public class MainActivity extends AppCompatActivity {
                         } else if (i == 10) {
                             frag = new AjudaFragment();
                             mToolbar.setTitle("Ajuda");
-
+                        } else if (i == 11) {
+                            frag = new FeedbackFragment();
+                            mToolbar.setTitle("Feedback");
+                            mToolbar.setSubtitle("Dê Sua Opnião");
                         } else {
 
                         }
 
-//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        ft.replace(R.id.rl_fragment_container, frag);
-//                        ft.addToBackStack(null);
-//                        ft.commit();
-////                        Fragment frag = null;
-//                        mItemDrawerSelected = i;
-//
-//                        if (i == 0) {
-//                            frag = new MenuFragment();
-//                        } else if (i == 1) {
-//                            frag = new MenuFragment();
-//                        }
-//
                         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.rl_fragment_container, frag);
                         ft.addToBackStack(null);
@@ -217,10 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Configurações").withIcon(getResources().getDrawable(R.mipmap.ic_config)));
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Ajuda"));
-
-        navigationDrawerLeft.addItem(new SwitchDrawerItem().withName("Notificação").withChecked(true).withOnCheckedChangeListener(mOnCheckedChangeListener));
-        navigationDrawerLeft.addItem(new ToggleDrawerItem().withName("News").withChecked(true).withOnCheckedChangeListener(mOnCheckedChangeListener));
-
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Feedback"));
 
     }
 
