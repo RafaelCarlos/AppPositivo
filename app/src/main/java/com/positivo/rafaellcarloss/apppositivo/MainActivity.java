@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 .withThreeSmallProfileImages(true)
                 .withHeaderBackground(R.color.colorPrimary)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Rafael Carlos").withEmail("rafaelcarlosrc2014@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario_preto)),
+                        new ProfileDrawerItem().withName("Rafael Carlos").withEmail("rafaelcarlosrc2014@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario)),
                         new ProfileDrawerItem().withName("Armando").withEmail("armandopositivo@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario_preto))
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
@@ -203,14 +203,14 @@ public class MainActivity extends AppCompatActivity {
 
         navigationDrawerLeft.addItem(new SectionDrawerItem());
 
-        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meu Histórico"));
-        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meus Cartões"));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meu Histórico").withIcon(getResources().getDrawable(R.mipmap.ic_historico)));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meus Cartões").withIcon(getResources().getDrawable(R.mipmap.ic_cartoes)));
 
         navigationDrawerLeft.addItem(new SectionDrawerItem());
 
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Configurações").withIcon(getResources().getDrawable(R.mipmap.ic_config)));
-        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Ajuda"));
-        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Feedback"));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Ajuda").withIcon(getResources().getDrawable(R.mipmap.ic_help)));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Feedback").withIcon(getResources().getDrawable(R.mipmap.ic_feedback)));
 
     }
 
@@ -225,6 +225,9 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 return (isSelecetd ? R.mipmap.ic_carrinho : R.mipmap.ic_carrinho);
             case 7:
+                return (isSelecetd ? R.mipmap.ic_cartoes : R.mipmap.ic_cartoes);
+
+            case 9:
                 return (isSelecetd ? R.mipmap.ic_config : R.mipmap.ic_config);
         }
         return (0);
