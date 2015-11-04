@@ -103,15 +103,29 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#000000" />
 
+
+
+    <Button
+
+        android:id="@+id/bt_desativar_usuario_tela_configuracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="Desligar Minha Conta"
+        android:textColor="#000000"
+        android:layout_below="@+id/tv_descricao_baixo_saldo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="58dp" />
     <Button
         android:id="@+id/bt_salvar_tela_configuracao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="Salvar"
+        android:layout_below="@+id/bt_desativar_usuario_tela_configuracao"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_descricao_baixo_saldo"
-        android:layout_marginTop="61dp"
-        android:text="Salvar" />
-
+        android:layout_marginTop="40dp" />
 
 </RelativeLayout>

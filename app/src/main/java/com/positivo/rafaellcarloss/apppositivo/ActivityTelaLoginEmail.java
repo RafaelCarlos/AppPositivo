@@ -1,5 +1,6 @@
 package com.positivo.rafaellcarloss.apppositivo;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ActivityTelaLoginEmail extends AppCompatActivity {
 
@@ -53,14 +56,17 @@ public class ActivityTelaLoginEmail extends AppCompatActivity {
         tvEsqueciSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final AlertDialog d = new AlertDialog.Builder(ActivityTelaLoginEmail.this)
-                        .setPositiveButton(android.R.string.ok, null)
 
-                        .setMessage(Html.fromHtml("<a href=\"http://www.positivoautomacao.com.br\">Esqueci minha senha</a>"))
-                        .create();
-                d.show();
-// Make the textview clickable. Must be called after show()
-                ((TextView) d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+                mensagem();
+
+//                final AlertDialog d = new AlertDialog.Builder(ActivityTelaLoginEmail.this)
+//                        .setPositiveButton(android.R.string.ok, null)
+//
+//                        .setMessage(Html.fromHtml("<a href=\"http://www.positivoautomacao.com.br\">Esqueci minha senha</a>"))
+//                        .create();
+//                d.show();
+//// Make the textview clickable. Must be called after show()
+//                ((TextView) d.findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
 
             }
         });
@@ -75,6 +81,27 @@ public class ActivityTelaLoginEmail extends AppCompatActivity {
 
 
     }
+
+    private void mensagem() {
+        EditText campo = new EditText(this);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this, R.style.MaterialDrawerTheme_TranslucentStatus);
+        dialog.setTitle("Insira seu email")
+                .setMessage("Email: ")
+                .setView(campo)
+                .setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(ActivityTelaLoginEmail.this, "Email de recuperação de senha enviado com sucesso!", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
