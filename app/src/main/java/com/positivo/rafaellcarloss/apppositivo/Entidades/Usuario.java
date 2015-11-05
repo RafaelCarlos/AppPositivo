@@ -37,6 +37,25 @@ public class Usuario {
     @ForeignCollectionField(columnName = "tipo_usuario_id")
     private Collection<TipoUsuario> tipoUsuario;
 
+    @DatabaseField(foreign = true)
+    private Carteira carteira;
+
+    @DatabaseField(foreign = true)
+    private Cartoes cartoes;
+
+    @DatabaseField(foreign = true)
+    private CelularRecarga celularRecarga;
+
+    @DatabaseField(foreign = true)
+    private Configuracao configuracao;
+
+    @DatabaseField(foreign = true)
+    private RecargaGratis recargaGratis;
+
+    @DatabaseField(foreign = true)
+    private Recomendados recomendados;
+
+
     public Usuario() {
     }
 
@@ -49,6 +68,23 @@ public class Usuario {
         this.idFacebook = idFacebook;
         this.ativo = ativo;
         this.tipoUsuario = tipoUsuario;
+    }
+
+    public Usuario(int id, String nome, String sobreNome, String email, String senha, String idFacebook, Boolean ativo, Collection<TipoUsuario> tipoUsuario, Carteira carteira, Cartoes cartoes, CelularRecarga celularRecarga, Configuracao configuracao, RecargaGratis recargaGratis, Recomendados recomendados) {
+        this.id = id;
+        this.nome = nome;
+        this.sobreNome = sobreNome;
+        this.email = email;
+        this.senha = senha;
+        this.idFacebook = idFacebook;
+        this.ativo = ativo;
+        this.tipoUsuario = tipoUsuario;
+        this.carteira = carteira;
+        this.cartoes = cartoes;
+        this.celularRecarga = celularRecarga;
+        this.configuracao = configuracao;
+        this.recargaGratis = recargaGratis;
+        this.recomendados = recomendados;
     }
 
     public int getId() {
@@ -115,6 +151,54 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
+    public Carteira getCarteira() {
+        return carteira;
+    }
+
+    public void setCarteira(Carteira carteira) {
+        this.carteira = carteira;
+    }
+
+    public Cartoes getCartoes() {
+        return cartoes;
+    }
+
+    public void setCartoes(Cartoes cartoes) {
+        this.cartoes = cartoes;
+    }
+
+    public CelularRecarga getCelularRecarga() {
+        return celularRecarga;
+    }
+
+    public void setCelularRecarga(CelularRecarga celularRecarga) {
+        this.celularRecarga = celularRecarga;
+    }
+
+    public Configuracao getConfiguracao() {
+        return configuracao;
+    }
+
+    public void setConfiguracao(Configuracao configuracao) {
+        this.configuracao = configuracao;
+    }
+
+    public RecargaGratis getRecargaGratis() {
+        return recargaGratis;
+    }
+
+    public void setRecargaGratis(RecargaGratis recargaGratis) {
+        this.recargaGratis = recargaGratis;
+    }
+
+    public Recomendados getRecomendados() {
+        return recomendados;
+    }
+
+    public void setRecomendados(Recomendados recomendados) {
+        this.recomendados = recomendados;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -126,6 +210,12 @@ public class Usuario {
                 ", idFacebook='" + idFacebook + '\'' +
                 ", ativo=" + ativo +
                 ", tipoUsuario=" + tipoUsuario +
+                ", carteira=" + carteira +
+                ", cartoes=" + cartoes +
+                ", celularRecarga=" + celularRecarga +
+                ", configuracao=" + configuracao +
+                ", recargaGratis=" + recargaGratis +
+                ", recomendados=" + recomendados +
                 '}';
     }
 }

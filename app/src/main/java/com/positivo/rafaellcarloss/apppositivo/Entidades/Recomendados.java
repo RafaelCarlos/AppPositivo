@@ -22,5 +22,58 @@ public class Recomendados {
     private String numeroTelefone;
 
     @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> Usuario;
+    private Collection<Usuario> usuario;
+
+
+    public Recomendados() {
+    }
+
+    public Recomendados(int id, String nome, String numeroTelefone, Collection<Usuario> usuario) {
+        this.id = id;
+        this.nome = nome;
+        this.numeroTelefone = numeroTelefone;
+        this.usuario = usuario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNumeroTelefone() {
+        return numeroTelefone;
+    }
+
+    public void setNumeroTelefone(String numeroTelefone) {
+        this.numeroTelefone = numeroTelefone;
+    }
+
+    public Collection<Usuario> getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Collection<Usuario> usuario) {
+        this.usuario = usuario;
+    }
+
+    @Override
+    public String toString() {
+        return "Recomendados{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", numeroTelefone='" + numeroTelefone + '\'' +
+                ", usuario=" + usuario +
+                '}';
+    }
 }

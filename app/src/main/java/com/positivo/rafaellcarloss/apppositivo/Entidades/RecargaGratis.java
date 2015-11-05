@@ -53,4 +53,13 @@ public class RecargaGratis {
     public void setUsuario(Collection<Usuario> usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "RecargaGratis{" +
+                "id=" + id +
+                ", codigo='" + codigo + '\'' +
+                ", usuario=" + usuario +
+                '}';
+    }
 }

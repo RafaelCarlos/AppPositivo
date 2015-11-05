@@ -26,18 +26,18 @@ public class Configuracao {
     private Boolean baixoSaldo;
 
     @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> Usuario;
+    private Collection<Usuario> usuario;
 
 
     public Configuracao() {
     }
 
-    public Configuracao(int id, Boolean notificacao, Boolean emailPromocional, Boolean baixoSaldo, Collection<com.positivo.rafaellcarloss.apppositivo.Entidades.Usuario> usuario) {
+    public Configuracao(int id, Boolean notificacao, Boolean emailPromocional, Boolean baixoSaldo, Collection<Usuario> usuario) {
         this.id = id;
         this.notificacao = notificacao;
         this.emailPromocional = emailPromocional;
         this.baixoSaldo = baixoSaldo;
-        Usuario = usuario;
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -72,12 +72,12 @@ public class Configuracao {
         this.baixoSaldo = baixoSaldo;
     }
 
-    public Collection<com.positivo.rafaellcarloss.apppositivo.Entidades.Usuario> getUsuario() {
-        return Usuario;
+    public Collection<Usuario> getUsuario() {
+        return usuario;
     }
 
-    public void setUsuario(Collection<com.positivo.rafaellcarloss.apppositivo.Entidades.Usuario> usuario) {
-        Usuario = usuario;
+    public void setUsuario(Collection<Usuario> usuario) {
+        this.usuario = usuario;
     }
 
     @Override
@@ -87,7 +87,7 @@ public class Configuracao {
                 ", notificacao=" + notificacao +
                 ", emailPromocional=" + emailPromocional +
                 ", baixoSaldo=" + baixoSaldo +
-                ", Usuario=" + Usuario +
+                ", usuario=" + usuario +
                 '}';
     }
 }
