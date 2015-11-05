@@ -5,6 +5,17 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.Carteira;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.Cartoes;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.CelularRecarga;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.Configuracao;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.RecargaGratis;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.Recomendados;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.TipoUsuario;
+import com.positivo.rafaellcarloss.apppositivo.Entidades.Usuario;
+
+import java.sql.SQLException;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
@@ -17,17 +28,50 @@ public class ORMLiteHelper extends OrmLiteSqliteOpenHelper {
 
     private static ORMLiteHelper mInstance = null;
 
-    public ORMLiteHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int databaseVersion) {
-        super(context, databaseName, factory, databaseVersion);
+    public ORMLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase database, ConnectionSource connectionSource) {
 
+        try {
+            TableUtils.createTable(connectionSource, Carteira.class);
+            TableUtils.createTable(connectionSource, Cartoes.class);
+            TableUtils.createTable(connectionSource, CelularRecarga.class);
+            TableUtils.createTable(connectionSource, Configuracao.class);
+            TableUtils.createTable(connectionSource, RecargaGratis.class);
+            TableUtils.createTable(connectionSource, Recomendados.class);
+            TableUtils.createTable(connectionSource, TipoUsuario.class);
+            TableUtils.createTable(connectionSource, Usuario.class);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 
+        try {
+            TableUtils.dropTable(connectionSource, Carteira.class, true);
+            TableUtils.dropTable(connectionSource, Cartoes.class, true);
+            TableUtils.dropTable(connectionSource, CelularRecarga.class, true);
+            TableUtils.dropTable(connectionSource, Configuracao.class, true);
+            TableUtils.dropTable(connectionSource, RecargaGratis.class, true);
+            TableUtils.dropTable(connectionSource, Recomendados.class, true);
+            TableUtils.dropTable(connectionSource, TipoUsuario.class, true);
+            TableUtils.dropTable(connectionSource, Usuario.class, true);
+
+            onCreate(database, connectionSource);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void close() {
+        super.close();
     }
 }
