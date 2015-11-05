@@ -2,6 +2,7 @@ package com.positivo.rafaellcarloss.apppositivo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -84,6 +85,7 @@ public class ActivityTelaLoginEmail extends AppCompatActivity {
 
     private void mensagem() {
         EditText campo = new EditText(this);
+        campo.setTextColor(Color.WHITE);
         AlertDialog.Builder dialog = new AlertDialog.Builder(this, R.style.MaterialDrawerTheme_TranslucentStatus);
         dialog.setTitle("Insira seu email")
                 .setMessage("Email: ")
