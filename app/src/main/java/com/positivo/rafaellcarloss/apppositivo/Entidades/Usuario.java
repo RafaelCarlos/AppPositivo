@@ -34,7 +34,7 @@ public class Usuario {
     @DatabaseField(columnName = "ativo")
     private Boolean ativo;
 
-    @ForeignCollectionField(columnName = "tipo_usuario")
+    @ForeignCollectionField(columnName = "tipo_usuario_id")
     private Collection<TipoUsuario> tipoUsuario;
 
     public Usuario() {
