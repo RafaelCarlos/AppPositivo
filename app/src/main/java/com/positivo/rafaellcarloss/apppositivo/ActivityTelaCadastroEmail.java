@@ -30,7 +30,7 @@ public class ActivityTelaCadastroEmail extends AppCompatActivity {
         etSenha = (EditText) findViewById(R.id.et_senha_tela_cadastro_email);
 
 
-        mToolbar.setTitle("Login");
+        mToolbar.setTitle("Cadastro");
         mToolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(mToolbar);
 
@@ -46,13 +46,32 @@ public class ActivityTelaCadastroEmail extends AppCompatActivity {
         mensagem.setText("Dados cadastrados com sucesso");
         titulo.setTextColor(Color.BLACK);
 
+
         btCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mensagem(titulo, mensagem);
-                etNome.setText("");
-                etEmail.setText("");
-                etSenha.setText("");
+                if (etNome.getText().toString().equals("")) {
+                    etNome.requestFocus();
+                    etNome.setError("Campo Obrigatorio");
+                    etNome.setHint("Nome");
+                    etNome.setHintTextColor(getResources().getColor(R.color.colorPrimary));
+                }
+                if (etEmail.getText().toString().equals("")) {
+                    etEmail.setHint("Email");
+                    etEmail.setHintTextColor(getResources().getColor(R.color.colorPrimary));
+                }
+                if (etSenha.getText().toString().equals("")) {
+                    etSenha.setHint("Senha");
+                    etSenha.setHintTextColor(getResources().getColor(R.color.colorPrimary));
+                } else {
+                    mensagem(titulo, mensagem);
+                    etNome.setText("");
+                    etNome.setHintTextColor(Color.BLACK);
+                    etEmail.setText("");
+                    etEmail.setHintTextColor(Color.BLACK);
+                    etSenha.setText("");
+                    etSenha.setHintTextColor(Color.BLACK);
+                }
             }
         });
 
@@ -61,13 +80,15 @@ public class ActivityTelaCadastroEmail extends AppCompatActivity {
 
 
     public void mensagem(TextView titulo, TextView texto) {
-        AlertDialog.Builder Mensagem = new AlertDialog.Builder(this);
+        AlertDialog.Builder Mensagem = new AlertDialog.Builder(this, R.style.MaterialDrawerTheme_TranslucentStatus);
         Mensagem.setTitle(titulo.getText());
         Mensagem.setMessage(texto.getText());
         Mensagem.setNegativeButton("OK", null);
         Mensagem.show();
-    }    @Override
-         public boolean onCreateOptionsMenu(Menu menu) {
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         return true;
     }
 
