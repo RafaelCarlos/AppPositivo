@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,17 +51,20 @@ public class ActivityTelaCadastroEmail extends AppCompatActivity {
         btCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etNome.getText().toString().equals("")) {
+                if (etNome.getText().length() <= 0) {
                     etNome.requestFocus();
-                    etNome.setError("Campo Obrigatorio");
+                    etNome.setError(Html.fromHtml("<font color='#FFFFFF'>Campo obrigatório</font>"));
+//                    etNome.setError("Campo Obrigatorio");
                     etNome.setHint("Nome");
                     etNome.setHintTextColor(getResources().getColor(R.color.colorPrimary));
-                }
-                if (etEmail.getText().toString().equals("")) {
+                } else if (etEmail.getText().length() <= 0) {
+                    etEmail.requestFocus();
+                    etEmail.setError(Html.fromHtml("<font color='#FFFFFF'>Campo obrigatório</font>"));
                     etEmail.setHint("Email");
                     etEmail.setHintTextColor(getResources().getColor(R.color.colorPrimary));
-                }
-                if (etSenha.getText().toString().equals("")) {
+                } else if (etSenha.getText().length() <= 0) {
+                    etSenha.requestFocus();
+                    etSenha.setError(Html.fromHtml("<font color='#FFFFFF'>Campo obrigatório</font>"));
                     etSenha.setHint("Senha");
                     etSenha.setHintTextColor(getResources().getColor(R.color.colorPrimary));
                 } else {
@@ -80,7 +84,7 @@ public class ActivityTelaCadastroEmail extends AppCompatActivity {
 
 
     public void mensagem(TextView titulo, TextView texto) {
-        AlertDialog.Builder Mensagem = new AlertDialog.Builder(this, R.style.MaterialDrawerTheme_TranslucentStatus);
+        AlertDialog.Builder Mensagem = new AlertDialog.Builder(this, R.style.MyAlertDialog);
         Mensagem.setTitle(titulo.getText());
         Mensagem.setMessage(texto.getText());
         Mensagem.setNegativeButton("OK", null);

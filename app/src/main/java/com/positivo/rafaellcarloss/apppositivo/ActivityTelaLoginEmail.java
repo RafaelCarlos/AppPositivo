@@ -86,7 +86,7 @@ public class ActivityTelaLoginEmail extends AppCompatActivity {
     private void mensagem() {
         EditText campo = new EditText(this);
         campo.setTextColor(Color.WHITE);
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this, R.style.MaterialDrawerTheme_TranslucentStatus);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this, R.style.MyAlertDialog);
         dialog.setTitle("Insira seu email")
                 .setMessage("Email: ")
                 .setView(campo)
