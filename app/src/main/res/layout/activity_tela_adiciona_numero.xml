@@ -37,6 +37,7 @@
         android:gravity="top"
         android:hint="DDD"
         android:inputType="number"
+        android:maxLength="2"
         android:textColor="#000000"
         android:textColorHint="#000000" />
 
@@ -49,6 +50,7 @@
         android:layout_toEndOf="@+id/et_ddd_tela_add_numero"
         android:layout_toRightOf="@+id/et_ddd_tela_add_numero"
         android:hint="TELEFONE"
+        android:maxLength="9"
         android:paddingLeft="10dp"
         android:textAlignment="center"
         android:textColor="#000000"
