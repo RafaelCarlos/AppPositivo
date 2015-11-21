@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iv_cartao_item_cartoes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_nome_titular_item_cartoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome Titular"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000000"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/tv_numero_final_cartao_item_cartoes"
+            android:layout_alignStart="@+id/tv_numero_final_cartao_item_cartoes" />
+
+        <TextView
+            android:id="@+id/tv_numero_final_cartao_item_cartoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nome_titular_item_cartoes"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/iv_cartao_item_cartoes"
+            android:layout_toRightOf="@+id/iv_cartao_item_cartoes"
+            android:text="(0000)"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#000000"
+            android:layout_marginBottom="5dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_divider_item_cartoes"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="60dp"
+        android:background="@color/colorPrimary">
+
+    </View>
+</LinearLayout>

@@ -6,15 +6,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.positivo.rafaellcarloss.apppositivo.ActivityTelaLoginEmail">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_activity_tela_login_email"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentLeft="true"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ScrollView
         android:id="@+id/scroll_view_tela_login_email"
@@ -25,6 +16,16 @@
             android:id="@+id/rl_elementos_tela_login_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb_activity_tela_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentLeft="true"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
             <ImageView
