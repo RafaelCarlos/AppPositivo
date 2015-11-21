@@ -130,32 +130,38 @@ public class MainActivity extends AppCompatActivity {
                         } else if (i == 1) {
                             frag = new RecargaGratisFragment();
                             mToolbar.setTitle("Recarga Grátis");
+                            mToolbar.setSubtitle("");
                         } else if (i == 2) {
                             frag = new CarteiraFragment();
                             mToolbar.setTitle("Minha Carteira");
+                            mToolbar.setSubtitle("");
+
                         } else if (i == 3) {
                             frag = new ShoppingFragment();
                             mToolbar.setTitle("Shopping");
-
+                            mToolbar.setSubtitle("");
                         } else if (i == 4) {
                             frag = new RecargaAutomaticaFragment();
                             mToolbar.setTitle("Recarga Automática");
-
+                            mToolbar.setSubtitle("");
                         } else if (i == 6) {
                             frag = new HistoricoFragment();
                             mToolbar.setTitle("Histórico");
-
+                            mToolbar.setSubtitle("");
                         } else if (i == 7) {
                             frag = new CartoesFrament();
                             mToolbar.setTitle("Cartões");
-
+                            mToolbar.setSubtitle("");
                         } else if (i == 9) {
                             frag = new ConfiguracaoFragment();
                             mToolbar.setTitle("Configurações");
+                            mToolbar.setSubtitle("");
 
                         } else if (i == 10) {
                             frag = new AjudaFragment();
                             mToolbar.setTitle("Ajuda");
+                            mToolbar.setSubtitle("");
+
                         } else if (i == 11) {
                             frag = new FeedbackFragment();
                             mToolbar.setTitle("Feedback");
@@ -203,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationDrawerLeft.addItem(new SectionDrawerItem());
 
-        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meu Histórico").withIcon(getResources().getDrawable(R.mipmap.ic_historico)));
+        navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meu Histórico").withIcon(getResources().getDrawable(R.drawable.ic_relatorio)));
         navigationDrawerLeft.addItem(new PrimaryDrawerItem().withName("Meus Cartões").withIcon(getResources().getDrawable(R.mipmap.ic_cartoes)));
 
         navigationDrawerLeft.addItem(new SectionDrawerItem());
@@ -225,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 return (isSelecetd ? R.mipmap.ic_carrinho : R.mipmap.ic_carrinho);
             case 7:
-                return (isSelecetd ? R.mipmap.ic_cartoes : R.mipmap.ic_cartoes);
+                return (isSelecetd ? R.drawable.ic_relatorio : R.drawable.ic_relatorio);
 
             case 9:
                 return (isSelecetd ? R.mipmap.ic_config : R.mipmap.ic_config);

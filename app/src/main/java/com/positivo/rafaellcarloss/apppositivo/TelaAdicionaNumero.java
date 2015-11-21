@@ -80,6 +80,10 @@ public class TelaAdicionaNumero extends AppCompatActivity {
         mensagem.show();
     }
 
+    public void lerContato() {
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
