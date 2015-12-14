@@ -91,8 +91,8 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         mensagem.setTextColor(Color.RED);
 
 
-        dialog = new ProgressDialog(this, R.style.MyAlertDialog)
-                .show(this, titulo.getText(), "Logando..", false, true);
+        dialog = new ProgressDialog(this, R.style.MaterialDrawerBaseTheme_Dialog)
+                .show(this, null, "Logando..", false, true);
 
 
         exibi();
