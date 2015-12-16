@@ -12,8 +12,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import mehdi.sakout.fancybuttons.FancyButton;
 
 public class TelaInicial extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,16 +42,19 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         mToolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(mToolbar);
 
+
           /*
           Habilita a opção de voltar. Muito recomendando quando se usa vários Fragments.
-          getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+          getSup
+
+          portActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);*/
 
 
         btLogarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TelaInicial.this, ActivityTelaLoginEmail.class));
+                startActivity(new Intent(TelaInicial.this, LoginActivity.class));
             }
         });
 
@@ -91,7 +98,7 @@ public class TelaInicial extends AppCompatActivity implements View.OnClickListen
         mensagem.setTextColor(Color.RED);
 
 
-        dialog = new ProgressDialog(this, R.style.MaterialDrawerBaseTheme_Dialog)
+        dialog = new ProgressDialog(this, R.style.AppTheme_Dark_Dialog)
                 .show(this, null, "Logando..", false, true);
 
 
