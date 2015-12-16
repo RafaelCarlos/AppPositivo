@@ -11,10 +11,17 @@
     <color name="colorSecondText">#999</color>
     <color name="coloLink">#1ea4f7</color>
     <color name="colorDivider">#ccc</color>
-    <color name="colorFundoFeedback" > #9E9E9E</color>
+    <color name="colorFundoFeedback">#9E9E9E</color>
 
+    <color name="iron">#CCCCCC</color>
+    <color name="white">#FFFFFF</color>
     <color name="colorAccent">#795548</color>
 
-    <color name="colorFAB"> #1976D2</color>
+    <color name="primary">#E43F3F</color>
+    <color name="primary_dark">#E12929</color>
+    <color name="primary_darker">#CC1D1D</color>
+    <color name="accent">#FFFFFF</color>
+
+    <color name="colorFAB">#1976D2</color>
     <color name="colorFABPressed">#D32F2F</color>
 </resources>
