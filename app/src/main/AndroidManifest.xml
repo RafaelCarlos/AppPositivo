@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.positivo.rafaellcarloss.apppositivo" >
+    package="com.positivo.rafaellcarloss.apppositivo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.MyTheme" >
+        android:theme="@style/Theme.MyTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".TelaInicial"
-            android:label="@string/title_activity_tela_inicial" >
+            android:label="@string/title_activity_tela_inicial">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +24,28 @@
         </activity>
         <activity
             android:name=".TelaRecarga"
-            android:label="@string/title_activity_tela_recarga" >
-        </activity>
+            android:label="@string/title_activity_tela_recarga" />
+        <activity
+            android:name=".TelaAdicionaNumero"
+            android:label="@string/title_activity_tela_adiciona_numero" />
+        <activity
+            android:name=".ActivityTelaCarteira"
+            android:label="@string/title_activity_activity_tela_carteira" />
+        <activity
+            android:name=".ActivityTelaRecagaGratis"
+            android:label="@string/title_activity_activity_tela_recaga_gratis" />
+        <activity
+            android:name=".ActivityTelaLoginEmail"
+            android:label="@string/title_activity_activity_tela_login_email" />
+        <activity
+            android:name=".ActivityTelaCadastroEmail"
+            android:label="@string/title_activity_activity_tela_cadastro_email"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".SignupActivity"
+            android:theme="@style/AppTheme.Dark" />
     </application>
 
 </manifest>
