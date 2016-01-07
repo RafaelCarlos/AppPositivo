@@ -88,17 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 .withThreeSmallProfileImages(true)
                 .withHeaderBackground(R.color.colorPrimary)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Rafael Carlos").withEmail("rafaelcarlosrc2014@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario)),
-                        new ProfileDrawerItem().withName("Armando").withEmail("armandopositivo@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario_preto))
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile iProfile, boolean b) {
-                        Toast.makeText(MainActivity.this, "onProfileChanged: " + iProfile.getName(), Toast.LENGTH_SHORT).show();
-                        headerNavigationLeft.setBackgroundRes(R.color.colorPrimary);
-                        return false;
-                    }
-                })
+                        new ProfileDrawerItem().withName("Fulano da Silva").withEmail("fulanosilva@gmail.com").withIcon(getResources().getDrawable(R.mipmap.ic_usuario_preto)))
                 .build();
 
         navigationDrawerLeft = new Drawer()
