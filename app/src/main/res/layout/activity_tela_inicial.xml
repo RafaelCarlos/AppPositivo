@@ -60,11 +60,11 @@
             <Button
                 android:id="@+id/btLogarFacebook"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="65dp"
                 android:layout_below="@+id/container"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="120dp"
-                android:background="@drawable/screen_border"
+                android:background="#4682B4"
                 android:backgroundTint="#4682B4"
                 android:drawableLeft="@drawable/ic_facebook"
                 android:drawablePadding="-60dp"
@@ -78,12 +78,13 @@
             <Button
                 android:id="@+id/btLogarComEmail"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="65dp"
                 android:layout_alignLeft="@+id/btLogarFacebook"
                 android:layout_alignStart="@+id/btLogarFacebook"
                 android:layout_below="@+id/btLogarFacebook"
                 android:layout_marginTop="48dp"
-                android:background="@drawable/screen_border_botao"
+                android:background="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimary"
                 android:text="Entrar com E-mail"
                 android:textColor="#fefffa" />
 
