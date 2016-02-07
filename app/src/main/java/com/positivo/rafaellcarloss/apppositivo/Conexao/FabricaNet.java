@@ -18,7 +18,7 @@ import android.widget.Toast;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.ByteArrayOutputStream;
@@ -39,13 +39,13 @@ public class FabricaNet {
         try {
             //Realiza a leitura dos dados no servidor via HTTP
             HttpClient vrCliente = new DefaultHttpClient();
-            HttpGet vrGet = new HttpGet();
+            HttpPost vrPost = new HttpPost();
 
             URL vrURL = new URL(ender);
             HttpURLConnection vrConexaoHttp = (HttpURLConnection) vrURL.openConnection();
             vrConexaoHttp.setConnectTimeout(10000);
-            vrGet.setURI(new URI(ender));
-            HttpResponse vrResponce = vrCliente.execute(vrGet);
+            vrPost.setURI(new URI(ender));
+            HttpResponse vrResponce = vrCliente.execute(vrPost);
             HttpEntity vrEntity = vrResponce.getEntity();
 
             if (vrEntity != null) {
