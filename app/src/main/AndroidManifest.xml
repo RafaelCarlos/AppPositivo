@@ -39,13 +39,14 @@
             android:label="@string/title_activity_activity_tela_login_email" />
         <activity
             android:name=".ActivityTelaCadastroEmail"
-            android:label="@string/title_activity_activity_tela_cadastro_email"></activity>
+            android:label="@string/title_activity_activity_tela_cadastro_email" />
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".SignupActivity"
             android:theme="@style/AppTheme.Dark" />
+        <activity android:name=".LerContato.LerContatos"></activity>
     </application>
 
 </manifest>
