@@ -12,7 +12,6 @@ import com.positivo.rafaellcarloss.apppositivo.Entidades.CelularRecarga;
 import com.positivo.rafaellcarloss.apppositivo.Entidades.Configuracao;
 import com.positivo.rafaellcarloss.apppositivo.Entidades.RecargaGratis;
 import com.positivo.rafaellcarloss.apppositivo.Entidades.Recomendados;
-import com.positivo.rafaellcarloss.apppositivo.Entidades.TipoUsuario;
 import com.positivo.rafaellcarloss.apppositivo.Entidades.Usuario;
 
 import java.sql.SQLException;

@@ -2,7 +2,6 @@ package com.positivo.rafaellcarloss.apppositivo.Dao;
 
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.support.ConnectionSource;
-import com.positivo.rafaellcarloss.apppositivo.Entidades.TipoUsuario;
 
 import java.sql.SQLException;
 

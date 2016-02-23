@@ -1,19 +1,16 @@
 package com.positivo.rafaellcarloss.apppositivo.Entidades;
 
-import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 
-import java.util.Collection;
+import java.io.Serializable;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
  */
-public class Cartoes {
+public class Cartoes implements Serializable {
 
     @DatabaseField(generatedId = true)
     private int id;
-
 
     @DatabaseField(columnName = "numero_cartao")
     private String numeroCartao;
@@ -30,20 +27,18 @@ public class Cartoes {
     @DatabaseField(columnName = "cpf")
     private String cpf;
 
-    @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> usuario;
+    @DatabaseField(foreign = true)
+    private Usuario usuario;
 
     public Cartoes() {
     }
 
-    public Cartoes(int id, String numeroCartao, String nomeTitular, String codigoSeguranca, String validade, String cpf, Collection<Usuario> usuario) {
-        this.id = id;
+    public Cartoes(String numeroCartao, String nomeTitular, String codigoSeguranca, String validade, String cpf) {
         this.numeroCartao = numeroCartao;
         this.nomeTitular = nomeTitular;
         this.codigoSeguranca = codigoSeguranca;
         this.validade = validade;
         this.cpf = cpf;
-        this.usuario = usuario;
     }
 
     public int getId() {
@@ -94,11 +89,11 @@ public class Cartoes {
         this.cpf = cpf;
     }
 
-    public Collection<Usuario> getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Collection<Usuario> usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

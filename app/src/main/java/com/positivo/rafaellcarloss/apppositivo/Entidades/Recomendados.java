@@ -1,16 +1,15 @@
 package com.positivo.rafaellcarloss.apppositivo.Entidades;
 
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import java.util.Collection;
+import java.io.Serializable;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
  */
 @DatabaseTable(tableName = "recomendados")
-public class Recomendados {
+public class Recomendados implements Serializable{
 
     @DatabaseField(generatedId = true)
     private int id;
@@ -21,18 +20,21 @@ public class Recomendados {
     @DatabaseField(columnName = "numero_telefone")
     private String numeroTelefone;
 
-    @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> usuario;
+    @DatabaseField(columnName = "codigo_recomendado")
+    private String codigoRecomendado;
+
+    @DatabaseField(foreign = true, columnName = "usuario_id")
+    private Usuario usuario;
 
 
     public Recomendados() {
     }
 
-    public Recomendados(int id, String nome, String numeroTelefone, Collection<Usuario> usuario) {
+    public Recomendados(int id, String nome, String numeroTelefone, String codigoRecomendado) {
         this.id = id;
         this.nome = nome;
         this.numeroTelefone = numeroTelefone;
-        this.usuario = usuario;
+        this.codigoRecomendado = codigoRecomendado;
     }
 
     public int getId() {
@@ -59,11 +61,19 @@ public class Recomendados {
         this.numeroTelefone = numeroTelefone;
     }
 
-    public Collection<Usuario> getUsuario() {
+    public String getCodigoRecomendado() {
+        return codigoRecomendado;
+    }
+
+    public void setCodigoRecomendado(String codigoRecomendado) {
+        this.codigoRecomendado = codigoRecomendado;
+    }
+
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Collection<Usuario> usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
@@ -73,6 +83,7 @@ public class Recomendados {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", numeroTelefone='" + numeroTelefone + '\'' +
+                ", codigoRecomendado='" + codigoRecomendado + '\'' +
                 ", usuario=" + usuario +
                 '}';
     }

@@ -4,13 +4,14 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
  */
 @DatabaseTable(tableName = "recarga_gratis")
-public class RecargaGratis {
+public class RecargaGratis implements Serializable{
 
     @DatabaseField(generatedId = true)
     private int id;
@@ -18,16 +19,15 @@ public class RecargaGratis {
     @DatabaseField(columnName = "codigo")
     private String codigo;
 
-    @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> usuario;
+    @DatabaseField(foreign = true)
+    private Usuario usuario;
 
     public RecargaGratis() {
     }
 
-    public RecargaGratis(int id, String codigo, Collection<Usuario> usuario) {
+    public RecargaGratis(int id, String codigo) {
         this.id = id;
         this.codigo = codigo;
-        this.usuario = usuario;
     }
 
     public int getId() {
@@ -46,11 +46,11 @@ public class RecargaGratis {
         this.codigo = codigo;
     }
 
-    public Collection<Usuario> getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Collection<Usuario> usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

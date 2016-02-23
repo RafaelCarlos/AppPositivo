@@ -1,10 +1,7 @@
 package com.positivo.rafaellcarloss.apppositivo.Entidades;
 
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
-
-import java.util.Collection;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
@@ -25,19 +22,18 @@ public class Configuracao {
     @DatabaseField(columnName = "baixo_saldo")
     private Boolean baixoSaldo;
 
-    @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> usuario;
+    @DatabaseField(foreign = true)
+    private Usuario usuario;
 
 
     public Configuracao() {
     }
 
-    public Configuracao(int id, Boolean notificacao, Boolean emailPromocional, Boolean baixoSaldo, Collection<Usuario> usuario) {
+    public Configuracao(int id, Boolean notificacao, Boolean emailPromocional, Boolean baixoSaldo) {
         this.id = id;
         this.notificacao = notificacao;
         this.emailPromocional = emailPromocional;
         this.baixoSaldo = baixoSaldo;
-        this.usuario = usuario;
     }
 
     public int getId() {
@@ -72,11 +68,11 @@ public class Configuracao {
         this.baixoSaldo = baixoSaldo;
     }
 
-    public Collection<Usuario> getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Collection<Usuario> usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

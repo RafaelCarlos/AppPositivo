@@ -1,13 +1,10 @@
 package com.positivo.rafaellcarloss.apppositivo.Entidades;
 
-import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Collection;
 
 /**
  * Created by rafaellcarloss on 05/11/15.
@@ -21,16 +18,15 @@ public class Carteira implements Serializable {
     @DatabaseField(columnName = "saldo")
     private BigDecimal saldo;
 
-    @ForeignCollectionField(columnName = "usuario_id")
-    private Collection<Usuario> usuario;
+    @DatabaseField(foreign = true)
+    private Usuario usuario;
 
     public Carteira() {
     }
 
-    public Carteira(int id, BigDecimal saldo, Collection<Usuario> usuario) {
+    public Carteira(int id, BigDecimal saldo) {
         this.id = id;
         this.saldo = saldo;
-        this.usuario = usuario;
     }
 
     public int getId() {
@@ -49,11 +45,11 @@ public class Carteira implements Serializable {
         this.saldo = saldo;
     }
 
-    public Collection<Usuario> getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Collection<Usuario> usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 

@@ -4,16 +4,18 @@ package com.positivo.rafaellcarloss.apppositivo.Entidades;
  * Created by rafaellcarloss on 06/10/15.
  */
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 @DatabaseTable(tableName = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
 
-    @DatabaseField(generatedId = true)
+    @DatabaseField(generatedId = false)
     private int id;
 
     @DatabaseField(columnName = "nome")
@@ -34,43 +36,33 @@ public class Usuario {
     @DatabaseField(columnName = "ativo")
     private Boolean ativo;
 
-    @ForeignCollectionField(columnName = "tipo_usuario_id")
-    private Collection<TipoUsuario> tipoUsuario;
+    @DatabaseField(dataType = DataType.STRING, columnName = "tipo_usuario")
+    private TipoUsuario tipoUsuario;
 
-    @DatabaseField(foreign = true)
-    private Carteira carteira;
+    @ForeignCollectionField
+    private Collection<Carteira> carteira;
 
-    @DatabaseField(foreign = true)
-    private Cartoes cartoes;
+    @ForeignCollectionField
+    private Collection<Cartoes> cartoes;
 
-    @DatabaseField(foreign = true)
-    private CelularRecarga celularRecarga;
+    @ForeignCollectionField
+    private Collection<CelularRecarga> celularRecarga;
 
-    @DatabaseField(foreign = true)
-    private Configuracao configuracao;
+    @ForeignCollectionField
+    private Collection<Configuracao> configuracao;
 
-    @DatabaseField(foreign = true)
-    private RecargaGratis recargaGratis;
+    @ForeignCollectionField
+    private Collection<RecargaGratis> recargaGratis;
 
-    @DatabaseField(foreign = true)
-    private Recomendados recomendados;
+    @ForeignCollectionField
+    private Collection<Recomendados> recomendados;
 
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nome, String sobreNome, String email, String senha, String idFacebook, Boolean ativo, Collection<TipoUsuario> tipoUsuario) {
-        this.id = id;
-        this.nome = nome;
-        this.sobreNome = sobreNome;
-        this.email = email;
-        this.senha = senha;
-        this.idFacebook = idFacebook;
-        this.ativo = ativo;
-        this.tipoUsuario = tipoUsuario;
-    }
 
-    public Usuario(int id, String nome, String sobreNome, String email, String senha, String idFacebook, Boolean ativo, Collection<TipoUsuario> tipoUsuario, Carteira carteira, Cartoes cartoes, CelularRecarga celularRecarga, Configuracao configuracao, RecargaGratis recargaGratis, Recomendados recomendados) {
+    public Usuario(int id, String nome, String sobreNome, String email, String senha, String idFacebook, Boolean ativo, TipoUsuario tipoUsuario) {
         this.id = id;
         this.nome = nome;
         this.sobreNome = sobreNome;
@@ -79,12 +71,6 @@ public class Usuario {
         this.idFacebook = idFacebook;
         this.ativo = ativo;
         this.tipoUsuario = tipoUsuario;
-        this.carteira = carteira;
-        this.cartoes = cartoes;
-        this.celularRecarga = celularRecarga;
-        this.configuracao = configuracao;
-        this.recargaGratis = recargaGratis;
-        this.recomendados = recomendados;
     }
 
     public int getId() {
@@ -143,59 +129,59 @@ public class Usuario {
         this.ativo = ativo;
     }
 
-    public Collection<TipoUsuario> getTipoUsuario() {
+    public TipoUsuario getTipoUsuario() {
         return tipoUsuario;
     }
 
-    public void setTipoUsuario(Collection<TipoUsuario> tipoUsuario) {
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public Carteira getCarteira() {
+    public Collection<Carteira> getCarteira() {
         return carteira;
     }
 
-    public void setCarteira(Carteira carteira) {
+    public void setCarteira(Collection<Carteira> carteira) {
         this.carteira = carteira;
     }
 
-    public Cartoes getCartoes() {
+    public Collection<Cartoes> getCartoes() {
         return cartoes;
     }
 
-    public void setCartoes(Cartoes cartoes) {
+    public void setCartoes(Collection<Cartoes> cartoes) {
         this.cartoes = cartoes;
     }
 
-    public CelularRecarga getCelularRecarga() {
+    public Collection<CelularRecarga> getCelularRecarga() {
         return celularRecarga;
     }
 
-    public void setCelularRecarga(CelularRecarga celularRecarga) {
+    public void setCelularRecarga(Collection<CelularRecarga> celularRecarga) {
         this.celularRecarga = celularRecarga;
     }
 
-    public Configuracao getConfiguracao() {
+    public Collection<Configuracao> getConfiguracao() {
         return configuracao;
     }
 
-    public void setConfiguracao(Configuracao configuracao) {
+    public void setConfiguracao(Collection<Configuracao> configuracao) {
         this.configuracao = configuracao;
     }
 
-    public RecargaGratis getRecargaGratis() {
+    public Collection<RecargaGratis> getRecargaGratis() {
         return recargaGratis;
     }
 
-    public void setRecargaGratis(RecargaGratis recargaGratis) {
+    public void setRecargaGratis(Collection<RecargaGratis> recargaGratis) {
         this.recargaGratis = recargaGratis;
     }
 
-    public Recomendados getRecomendados() {
+    public Collection<Recomendados> getRecomendados() {
         return recomendados;
     }
 
-    public void setRecomendados(Recomendados recomendados) {
+    public void setRecomendados(Collection<Recomendados> recomendados) {
         this.recomendados = recomendados;
     }
 
