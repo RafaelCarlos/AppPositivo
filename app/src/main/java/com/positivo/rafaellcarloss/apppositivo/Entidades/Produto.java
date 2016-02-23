@@ -16,19 +16,19 @@ public class Produto implements Serializable {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = "nome_produto")
     private String nomeProduto;
 
-    @DatabaseField(dataType = DataType.BIG_DECIMAL)
+    @DatabaseField(dataType = DataType.BIG_DECIMAL, columnName = "valor_produto")
     private BigDecimal valorProduto;
 
-    @DatabaseField
+    @DatabaseField(columnName = "validade")
     private int validade;
 
-    @DatabaseField
+    @DatabaseField(columnName = "codigo_produto")
     private String codigoProduto;
 
-    @DatabaseField(foreign = true)
+    @DatabaseField(foreign = true, columnName = "operadora_id")
     private Operadora operadora;
 
     public Produto() {

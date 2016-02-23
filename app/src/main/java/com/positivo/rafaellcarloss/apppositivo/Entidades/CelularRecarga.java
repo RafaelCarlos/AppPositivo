@@ -16,13 +16,16 @@ public class CelularRecarga implements Serializable {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField(columnName = "nome_contato")
+    @DatabaseField(columnName = "nome_contato", canBeNull = true)
     private String nomeContato;
 
     @DatabaseField(dataType = DataType.BIG_DECIMAL)
     private BigDecimal valor;
 
-    @DatabaseField(dataType = DataType.DATE)
+    @DatabaseField(columnName = "numero_celular", canBeNull = false)
+    private String numeroCelular;
+
+    @DatabaseField(dataType = DataType.DATE, columnName = "data_recarga")
     private Date dataRecarga;
 
     @DatabaseField(foreign = true)
@@ -31,10 +34,11 @@ public class CelularRecarga implements Serializable {
     public CelularRecarga() {
     }
 
-    public CelularRecarga(int id, String nomeContato, BigDecimal valor, Date dataRecarga) {
+    public CelularRecarga(int id, String nomeContato, BigDecimal valor, String numeroCelular, Date dataRecarga) {
         this.id = id;
         this.nomeContato = nomeContato;
         this.valor = valor;
+        this.numeroCelular = numeroCelular;
         this.dataRecarga = dataRecarga;
     }
 
@@ -62,6 +66,14 @@ public class CelularRecarga implements Serializable {
         this.valor = valor;
     }
 
+    public String getNumeroCelular() {
+        return numeroCelular;
+    }
+
+    public void setNumeroCelular(String numeroCelular) {
+        this.numeroCelular = numeroCelular;
+    }
+
     public Date getDataRecarga() {
         return dataRecarga;
     }
@@ -84,6 +96,7 @@ public class CelularRecarga implements Serializable {
                 "id=" + id +
                 ", nomeContato='" + nomeContato + '\'' +
                 ", valor=" + valor +
+                ", numeroCelular='" + numeroCelular + '\'' +
                 ", dataRecarga=" + dataRecarga +
                 ", usuario=" + usuario +
                 '}';

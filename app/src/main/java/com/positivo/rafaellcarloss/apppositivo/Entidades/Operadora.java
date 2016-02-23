@@ -16,10 +16,10 @@ public class Operadora implements Serializable {
     @DatabaseField(generatedId = true)
     private int id;
 
-    @DatabaseField
+    @DatabaseField(columnName = "nome_operadora")
     private String nomeOperadora;
 
-    @DatabaseField
+    @DatabaseField(columnName = "codigo_operadora")
     private String codigoOperadora;
 
     @ForeignCollectionField
