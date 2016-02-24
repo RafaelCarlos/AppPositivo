@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.positivo.rafaellcarloss.apppositivo.RecargaActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_recarga"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <TextView
+        android:id="@+id/tv_operadora_recarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tb_recarga"
+        android:text="Operadora"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#753131"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/sp_operadora_recarga"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_operadora_recarga"
+        android:background="#c3b9b9"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:id="@+id/et_ddd_recarga"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sp_operadora_recarga"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="DDD"
+        android:textColor="#753131"
+        android:textColorHint="#753131" />
+
+    <EditText
+        android:id="@+id/et_telefone_recarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sp_operadora_recarga"
+        android:layout_alignRight="@+id/sp_operadora_recarga"
+        android:layout_alignTop="@+id/et_ddd_recarga"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="Telefone"
+        android:textColor="#753131"
+        android:textColorHint="#753131" />
+
+    <Spinner
+        android:id="@+id/sp_valor_operadora_recarga"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/et_ddd_recarga"
+        android:layout_marginTop="5dp"
+        android:background="#c3b9b9"
+        android:spinnerMode="dropdown" />
+
+    <Button
+        android:id="@+id/bt_recarregar_activity_recarga"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sp_valor_operadora_recarga"
+        android:layout_marginTop="5dp"
+        android:text="Recarregar" />
+
+
+</RelativeLayout>

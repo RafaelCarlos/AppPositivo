@@ -50,6 +50,7 @@
         android:layout_toEndOf="@+id/et_ddd_tela_add_numero"
         android:layout_toRightOf="@+id/et_ddd_tela_add_numero"
         android:hint="TELEFONE"
+        android:inputType="phone"
         android:maxLength="9"
         android:paddingLeft="10dp"
         android:textAlignment="center"
