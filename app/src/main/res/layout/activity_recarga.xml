@@ -25,7 +25,7 @@
         android:layout_below="@+id/tb_recarga"
         android:text="Operadora"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#753131"
+        android:textColor="#762f2f"
         android:textStyle="bold" />
 
     <Spinner
