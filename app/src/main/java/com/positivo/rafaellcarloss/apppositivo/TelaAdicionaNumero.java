@@ -1,5 +1,6 @@
 package com.positivo.rafaellcarloss.apppositivo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -66,6 +67,8 @@ public class TelaAdicionaNumero extends AppCompatActivity {
                     etTelefone.setHintTextColor(Color.BLACK);
                     etNome.setText("");
                     etNome.setHintTextColor(Color.BLACK);
+
+                    startActivity(new Intent(TelaAdicionaNumero.this, RecargaActivity.class));
                 }
             }
         });
