@@ -28,27 +28,16 @@
         android:textColor="#762f2f"
         android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/sp_operadora_recarga"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/tv_operadora_recarga"
-        android:background="#c3b9b9"
-        android:spinnerMode="dropdown" />
-
     <EditText
         android:id="@+id/et_ddd_recarga"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/sp_operadora_recarga"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/rg_operadoras"
         android:ems="10"
+        android:hint="DDD"
         android:inputType="number"
-        android:text="DDD"
         android:textColor="#753131"
         android:textColorHint="#753131" />
 
@@ -56,25 +45,13 @@
         android:id="@+id/et_telefone_recarga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/sp_operadora_recarga"
-        android:layout_alignRight="@+id/sp_operadora_recarga"
-        android:layout_alignTop="@+id/et_ddd_recarga"
+        android:layout_below="@+id/rg_operadoras"
+        android:layout_centerHorizontal="true"
         android:ems="10"
+        android:hint="Telefone"
         android:inputType="phone"
-        android:text="Telefone"
         android:textColor="#753131"
         android:textColorHint="#753131" />
-
-    <Spinner
-        android:id="@+id/sp_valor_operadora_recarga"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/et_ddd_recarga"
-        android:layout_marginTop="5dp"
-        android:background="#c3b9b9"
-        android:spinnerMode="dropdown" />
 
     <Button
         android:id="@+id/bt_recarregar_activity_recarga"
@@ -82,9 +59,98 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/sp_valor_operadora_recarga"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/et_ddd_recarga"
+        android:layout_marginTop="131dp"
         android:text="Recarregar" />
+
+    <RadioGroup
+        android:id="@+id/rg_operadoras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tv_operadora_recarga"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rb_claro_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/ic_claro"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/rb_vivo_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="5"
+                    android:checked="false"
+                    android:drawableRight="@drawable/ic_vivo"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/rb_tim_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="6"
+                    android:checked="false"
+                    android:drawableRight="@drawable/ic_tim"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rb_nextel_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/ic_nextel"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/rb_oi_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="5"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/ic_oi"
+                    android:textColor="#000000" />
+
+                <RadioButton
+                    android:id="@+id/rb_algar_operadora_tela_recarga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/et_telefone_recarga"
+                    android:layout_alignRight="@+id/et_telefone_recarga"
+                    android:layout_below="@+id/rg_operadoras"
+                    android:layout_column="6"
+                    android:layout_marginTop="5dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/ic_algar"
+                    android:textColor="#000000" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RadioGroup>
 
 
 </RelativeLayout>
