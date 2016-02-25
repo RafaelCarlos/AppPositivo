@@ -2,6 +2,7 @@ package com.positivo.rafaellcarloss.apppositivo;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,16 +12,14 @@ import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
-
-import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
@@ -119,12 +118,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
-//    @Override
-//    public void onBackPressed() {
-//        // Disable going back to the MainActivity
-//        moveTaskToBack(true);
-//    }
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
